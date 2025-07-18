@@ -14,15 +14,20 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
                         auto: (resPath: string) => resPath.includes('.module.scss'),
                         localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
                     },
-                }
+                },
 
             },
-            "sass-loader",
+            'sass-loader',
         ],
     };
 
-    const fontsLoader = {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    const svgLoader = {
+        test: /\.svg$/,
+        use: [ '@svgr/webpack' ],
+    };
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
     };
 
@@ -33,8 +38,9 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     };
 
     return [
-        cssLoader,
-        fontsLoader,
+        fileLoader,
+        svgLoader,
         typeScriptLoader,
-    ]
-};
+        cssLoader,
+    ];
+}
