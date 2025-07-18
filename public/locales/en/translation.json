@@ -1,6 +1,8 @@
 {
-  "Язык": "English",
-  "Главная": "Main",
-  "О сайте": "About us",
-  "Страница не найдена": "Page not found"
+    "language": "English",
+    "links": {
+        "main": "Main",
+        "about_us": "About us "
+    },
+    "page_not_found": "Page not found"
 }
