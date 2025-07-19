@@ -1,8 +1,11 @@
 {
     "language": "English",
+    "short_language": "En",
     "links": {
         "main": "Main",
         "about_us": "About us "
     },
-    "page_not_found": "Page not found"
+    "page_not_found": "Page not found",
+    "unexpected_error_happened": "Unexpected error happened",
+    "reload_page": "Reload page"
 }

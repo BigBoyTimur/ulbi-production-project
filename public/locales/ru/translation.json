@@ -1,8 +1,12 @@
 {
     "language": "Русский",
+    "short_language": "Ру",
     "links": {
         "main": "Главная",
         "about_us": "О сайте"
     },
-    "page_not_found": "Страница не найдена"
+    "page_not_found": "Страница не найдена",
+    "unexpected_error_happened": "Произошла непредвиденная ошибка",
+        "reload_page": "Обновить страницу"
+
 }
