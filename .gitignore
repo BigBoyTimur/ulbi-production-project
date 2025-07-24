@@ -5,7 +5,4 @@ dist
 
 storybook-static
 
-.loki/current
-.loki/difference
-.loki/report.json
-.loki/report.html
+.loki
