@@ -63,6 +63,22 @@ export const ClearDark: Story = {
     decorators: [ ThemeDecorator(Theme.DARK) ],
 };
 
+export const ClearInvertedLight: Story = {
+    args: {
+        children: 'text',
+        theme: ButtonTheme.CLEAR_INVERTED,
+    },
+    decorators: [ ThemeDecorator(Theme.LIGHT) ],
+};
+
+export const ClearInvertedDark: Story = {
+    args: {
+        children: 'text',
+        theme: ButtonTheme.CLEAR_INVERTED,
+    },
+    decorators: [ ThemeDecorator(Theme.DARK) ],
+};
+
 export const OutlineLight: Story = {
     args: {
         children: 'text',
@@ -203,6 +219,25 @@ export const SquareSizeXLDark: Story = {
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
         size: ButtonSize.XL,
+    },
+    decorators: [ ThemeDecorator(Theme.DARK) ],
+};
+
+
+export const DisabledLight: Story = {
+    args: {
+        children: 'text',
+        theme: ButtonTheme.OUTLINE,
+        disabled: true,
+    },
+    decorators: [ ThemeDecorator(Theme.LIGHT) ],
+};
+
+export const DisabledDark: Story = {
+    args: {
+        children: 'text',
+        theme: ButtonTheme.OUTLINE,
+        disabled: true,
     },
     decorators: [ ThemeDecorator(Theme.DARK) ],
 };
