@@ -1,4 +1,8 @@
+.vscode/*
+
 node_modules
 dist
 
-.vscode/*
+storybook-static
+
+.loki
