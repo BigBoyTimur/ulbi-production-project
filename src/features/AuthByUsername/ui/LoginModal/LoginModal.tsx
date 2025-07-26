@@ -9,11 +9,6 @@ interface LoginModalProps {
 }
 
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
-    // useEffect(() => {
-    //     return () => {
-    //         onClose();
-    //     };
-    // });
 
     return (
         <Modal
