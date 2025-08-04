@@ -1,12 +1,17 @@
 {
-    "language": "Русский",
-    "short_language": "Ру",
-    "links": {
-        "main": "Главная",
-        "about_us": "О сайте"
-    },
-    "page_not_found": "Страница не найдена",
-    "unexpected_error_happened": "Произошла непредвиденная ошибка",
-        "reload_page": "Обновить страницу"
-
+  "language": "Русский",
+  "short_language": "Ру",
+  "links": {
+    "main": "Главная",
+    "about_us": "О сайте"
+  },
+  "page_not_found": "Страница не найдена",
+  "unexpected_error_happened": "Произошла непредвиденная ошибка",
+  "reload_page": "Обновить страницу",
+  "sign_in": "Войти",
+  "sign_out": "Выйти",
+  "enter_username": "Введите username",
+  "enter_password": "Введите пароль",
+  "sign_in_form": "Форма авторизации",
+  "auth_error": "Вы ввели неправильное имя пользователя или пароль"
 }

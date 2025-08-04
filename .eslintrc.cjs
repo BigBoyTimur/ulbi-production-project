@@ -53,7 +53,11 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'warn',
 
         // i18next
-        "i18next/no-literal-string": ['error', { "onlyAttribute": [ '' ] }]
+        "i18next/no-literal-string": ['error', { "onlyAttribute": [ '' ] }],
+
+        // Семантика
+        "jsx-a11y/no-static-element-interactions": 'off',
+        "jsx-a11y/click-events-have-key-events": 'off',
     },
     settings: {
         react: {

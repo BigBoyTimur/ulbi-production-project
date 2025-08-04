@@ -1,11 +1,17 @@
 {
-    "language": "English",
-    "short_language": "En",
-    "links": {
-        "main": "Main",
-        "about_us": "About us "
-    },
-    "page_not_found": "Page not found",
-    "unexpected_error_happened": "Unexpected error happened",
-    "reload_page": "Reload page"
+  "language": "English",
+  "short_language": "En",
+  "links": {
+    "main": "Main",
+    "about_us": "About us "
+  },
+  "page_not_found": "Page not found",
+  "unexpected_error_happened": "Unexpected error happened",
+  "reload_page": "Reload page",
+  "sign_in": "Sign in",
+  "sign_out": "Sign out",
+  "enter_username": "Enter username",
+  "enter_password": "Enter password",
+  "sign_in_form": "Sign in form",
+  "auth_error": "You entered wrong username or password"
 }
