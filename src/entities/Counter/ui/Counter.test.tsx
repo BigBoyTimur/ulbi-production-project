@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { Counter } from './Counter';
-import { componentRender } from 'shared/config/tests/componentRender/componentRender';
+import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
 
 describe('Counter component', () => {
     it('renders the initial count value', () => {

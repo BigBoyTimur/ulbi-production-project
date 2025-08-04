@@ -31,22 +31,6 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const DefaultLight: Story = {
-    args: {
-        children: 'text',
-        theme: undefined,
-    },
-    decorators: [ ThemeDecorator(Theme.LIGHT) ],
-};
-
-export const DefaultDark: Story = {
-    args: {
-        children: 'text',
-        theme: undefined,
-    },
-    decorators: [ ThemeDecorator(Theme.DARK) ],
-};
-
 export const ClearLight: Story = {
     args: {
         children: 'text',

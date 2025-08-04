@@ -3,7 +3,8 @@
   "short_language": "Ру",
   "links": {
     "main": "Главная",
-    "about_us": "О сайте"
+    "about_us": "О сайте",
+    "profile": "Профиль"
   },
   "page_not_found": "Страница не найдена",
   "unexpected_error_happened": "Произошла непредвиденная ошибка",

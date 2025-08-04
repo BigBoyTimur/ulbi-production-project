@@ -33,7 +33,7 @@ export const Modal = (props: ModalProps) => {
 
         return () => {
             if (isOpen) {
-                onClose();
+                onClose?.();
             }
             clearTimeout(timeRef.current);
         };
