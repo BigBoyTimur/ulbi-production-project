@@ -48,12 +48,13 @@ module.exports = {
                 "objectLiterals": "always"
             }
         }],
+        "react/display-name": "off",
         
         // TypeScript правила
         '@typescript-eslint/no-unused-vars': 'warn',
 
         // i18next
-        "i18next/no-literal-string": ['error', { "onlyAttribute": [ '' ] }],
+        "i18next/no-literal-string": ['error', { "onlyAttribute": [ 'title', 'text' ] }],
 
         // Семантика
         "jsx-a11y/no-static-element-interactions": 'off',
@@ -66,6 +67,7 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true
     },
     overrides: [
         {
@@ -73,6 +75,12 @@ module.exports = {
             rules: {
                 'i18next/no-literal-string': 'off',
             }
+        },
+        {
+        files: ['config/storybook/**/*.{ts,tsx,js,jsx}'],
+        rules: {
+            '@typescript-eslint/no-non-null-assertion': 'off'
         }
+    }
     ]
 };

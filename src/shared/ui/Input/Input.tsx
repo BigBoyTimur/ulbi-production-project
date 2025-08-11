@@ -11,7 +11,7 @@ interface InputProps extends HTMLInputProps {
     autofocus?: boolean;
 }
 
-const InputComponent = (props: InputProps) => {
+export const Input = memo((props: InputProps) => {
     const {
         className,
         value,
@@ -23,8 +23,8 @@ const InputComponent = (props: InputProps) => {
     } = props;
 
     const [ isFocused, setIsFocused ] = useState(false);
-    const [ caretPostion, setCaretPosition ] = useState(0);
-    const ref = useRef<HTMLInputElement>();
+    const [ caretPosition, setCaretPosition ] = useState(0);
+    const ref = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (autofocus) {
@@ -72,12 +72,11 @@ const InputComponent = (props: InputProps) => {
                 { isFocused && (
                     <span
                         className={ cls.caret }
-                        style={ { left: `${ caretPostion * 9 }px` } }
+                        style={ { left: `${ caretPosition * 9 }px` } }
                     />
                 ) }
             </div>
         </div>
     );
-};
+});
 
-export const Input = memo(InputComponent);
