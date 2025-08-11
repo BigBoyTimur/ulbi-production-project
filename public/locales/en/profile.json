@@ -1,8 +1,25 @@
 {
   "profile": "Profile",
-  "edit": "edit",
+  "edit": "Edit",
   "placeholders": {
     "first_name": "Your first name",
-    "last_name": "Your last name"
+    "last_name": "Your last name",
+    "age": "Your age",
+    "city": "Your city",
+    "username": "Your username",
+    "link_to_avatar": "Your link to avatar",
+    "currency": "Your currency",
+    "country": "Your country"
+  },
+  "error_while_loading": "Unexpected error happened while loading",
+  "try_reload": "Try to reload the page",
+  "cancel": "Cancel",
+  "save": "Save",
+  "errors": {
+    "server_error": "Server error",
+    "incorrect_user_data": "Incorrect user data",
+    "incorrect_age": "Incorrect age",
+    "incorrect_country": "Incorrect country",
+    "no_data": "No data was provided"
   }
 }
