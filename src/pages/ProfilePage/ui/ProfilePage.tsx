@@ -29,6 +29,15 @@ interface ProfilePageProps {
     className?: string;
 }
 
+const validateErrorsTranslateMap: Record<ValidateProfileError, string> = {
+    [ValidateProfileError.SERVER_ERROR]: 'errors.server_error',
+    [ValidateProfileError.INCORRECT_USER_DATA]: 'errors.incorrect_user_data',
+    [ValidateProfileError.INCORRECT_AGE]: 'errors.incorrect_age',
+    [ValidateProfileError.INCORRECT_COUNTRY]: 'errors.incorrect_country',
+    [ValidateProfileError.NO_DATA]: 'errors.no_data',
+};
+
+
 export const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
@@ -38,15 +47,6 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
-
-    const validateErrorsTranslateMap = {
-        [ValidateProfileError.SERVER_ERROR]: t('errors.server_error'),
-        [ValidateProfileError.INCORRECT_USER_DATA]: t('errors.incorrect_user_data'),
-        [ValidateProfileError.INCORRECT_AGE]: t('errors.incorrect_age'),
-        [ValidateProfileError.INCORRECT_COUNTRY]: t('errors.incorrect_country'),
-        [ValidateProfileError.NO_DATA]: t('errors.no_data'),
-    };
-
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -91,11 +91,11 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
         <DynamicModuleLoader reducers={ reducers } removeAfterUnmount>
             <div className={ classNames('', {}, [ className ]) }>
                 <ProfilePageHeader />
-                { validateErrors?.length && validateErrors.map((err) => (
+                { validateErrors?.length && validateErrors.map((err: ValidateProfileError) => (
                     <Text
                         key={ err }
                         theme={ TextTheme.ERROR } 
-                        text={ validateErrorsTranslateMap[err] } />
+                        text={ t(validateErrorsTranslateMap[err]) } />
                 )) }
                 <ProfileCard
                     data={ formData }
