@@ -35,43 +35,41 @@ export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) =>
         dispatch(updateProfileData());
     };
 
+    const editingButtons = ( readonly
+        ? (
+            <Button
+                onClick={ onEdit }
+                className={ cls.editBtn } 
+                theme={ ButtonTheme.OUTLINE }
+            >
+                { t('edit') }
+            </Button>
+        )
+        :  (
+            <div>
+                <Button
+                    onClick={ onCancelEdit }
+                    className={ cls.editBtn } 
+                    theme={ ButtonTheme.OUTLINE_RED }
+                >
+                    { t('cancel') }
+                </Button>
+                <Button
+                    onClick={ onSave }
+                    className={ cls.editBtn } 
+                    theme={ ButtonTheme.OUTLINE }
+                >
+                    { t('save') }
+                </Button>
+            </div>
+        ) );
+
     return (
         <div className={ classNames(cls.ProfilePageHeader, {}, [ className ]) }>
             <Text
                 title={ t('profile') }
             />
-            { canEdit && (
-                <>
-                    { readonly
-                        ? (
-                            <Button
-                                onClick={ onEdit }
-                                className={ cls.editBtn } 
-                                theme={ ButtonTheme.OUTLINE }
-                            >
-                                { t('edit') }
-                            </Button>
-                        )
-                        :  (
-                            <div>
-                                <Button
-                                    onClick={ onCancelEdit }
-                                    className={ cls.editBtn } 
-                                    theme={ ButtonTheme.OUTLINE_RED }
-                                >
-                                    { t('cancel') }
-                                </Button>
-                                <Button
-                                    onClick={ onSave }
-                                    className={ cls.editBtn } 
-                                    theme={ ButtonTheme.OUTLINE }
-                                >
-                                    { t('save') }
-                                </Button>
-                            </div>
-                        ) }
-                </>
-            ) }
+            { canEdit && editingButtons }
         </div>
     );
 });
