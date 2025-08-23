@@ -1,5 +1,6 @@
 {
   "article_id_not_given": "Article id was not provided",
   "error_while_loading": "Error happened while loading article",
-  "comments": "Comments"
+  "comments": "Comments",
+  "back_to_list": "Back to list"
 }

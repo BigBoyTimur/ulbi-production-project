@@ -8,7 +8,6 @@ import {
     ProfileCard,
     profileReducer,
 } from 'entities/Profile';
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
@@ -20,6 +19,9 @@ import { getProfileValidateErrors } from 'entities/Profile';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { ValidateProfileError } from 'entities/Profile';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -48,11 +50,13 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    const { id } = useParams<{ id: string }>();
+
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [ dispatch ]);
+    });
 
     
     const onFirstNameChange = (value?: string) => {
@@ -89,7 +93,7 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={ reducers } removeAfterUnmount>
-            <div className={ classNames('', {}, [ className ]) }>
+            <Page className={ classNames('', {}, [ className ]) }>
                 <ProfilePageHeader />
                 { validateErrors?.length && validateErrors.map((err: ValidateProfileError) => (
                     <Text
@@ -111,7 +115,7 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
                     onCurrencyChange={ onCurrencyChange }
                     onCountryChange={ onCountryChange }
                 />
-            </div>
+            </Page>
 
         </DynamicModuleLoader>
     );
