@@ -14,7 +14,6 @@ export const fetchNextArticlesPage = (): AppThunk => (dispatch, getState) => {
 
     if (hasMore && !isLoading) {
         dispatch(articlesPageActions.setPage(page + 1));
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        dispatch(fetchArticlesList({ page: page + 1 }) as any);
+        dispatch(fetchArticlesList({}));
     }
 };

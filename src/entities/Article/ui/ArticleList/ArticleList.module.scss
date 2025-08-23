@@ -1,14 +1,16 @@
 .ArticleList {
     display: flex;
+    gap: 30px;
 
     &.BIG {
         flex-direction: column;
-        gap: 30px;
     }
 
     &.SMALL {
-        display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+
+        &.noWrap {
+            flex-wrap: nowrap;
+        }
     }
 }

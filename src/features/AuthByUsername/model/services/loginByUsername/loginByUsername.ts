@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { User, userActions } from 'entities/User';
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
 interface LoginByUsernameProps {
@@ -17,7 +16,7 @@ export const loginByUsername = createAsyncThunk<
     'login/loginByUsername',
     async (userData, thunkAPI) => {
         const { username, password } = userData;
-        const { rejectWithValue, dispatch, extra: { api, navigate }  } = thunkAPI;
+        const { rejectWithValue, dispatch, extra: { api } } = thunkAPI;
         
         try {
             const response = await api.post<User>('/login', {
@@ -31,7 +30,6 @@ export const loginByUsername = createAsyncThunk<
             
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
-            navigate?.(RoutePath[AppRoutes.PROFILE] + response.data.id);
 
             return response.data;
         } catch (e) {
