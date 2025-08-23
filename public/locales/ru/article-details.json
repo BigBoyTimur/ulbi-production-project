@@ -1,5 +1,6 @@
 {
   "article_id_not_given": "Не предоставлен id статьи",
   "error_while_loading": "Произошла ошибка при загрузке статьи",
-  "comments": "Комментарии"
+  "comments": "Комментарии",
+  "back_to_list": "Вернуться к списку"
 }

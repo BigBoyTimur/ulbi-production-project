@@ -16,5 +16,7 @@
   "enter_password": "Enter password",
   "sign_in_form": "Sign in form",
   "auth_error": "You entered wrong username or password",
-  "no_comments": "There are no comments"
+  "no_comments": "There are no comments",
+  "enter_your_comment": "Enter your comment",
+  "send": "Send"
 }

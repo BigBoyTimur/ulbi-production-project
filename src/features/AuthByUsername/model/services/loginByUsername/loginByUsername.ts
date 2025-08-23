@@ -31,7 +31,7 @@ export const loginByUsername = createAsyncThunk<
             
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
-            navigate?.(RoutePath[AppRoutes.PROFILE]);
+            navigate?.(RoutePath[AppRoutes.PROFILE] + response.data.id);
 
             return response.data;
         } catch (e) {

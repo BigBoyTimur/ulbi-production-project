@@ -12,6 +12,7 @@ const data = {
     first: 'asd',
     city: 'asf',
     currency: Currency.USD,
+    id: '1',
 };
 
 describe('updateProfileData asyncThunk', () => {
@@ -40,7 +41,6 @@ describe('updateProfileData asyncThunk', () => {
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
 
         const result = await thunk.callThunk();
-        console.log(result);
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([
             ValidateProfileError.SERVER_ERROR,
