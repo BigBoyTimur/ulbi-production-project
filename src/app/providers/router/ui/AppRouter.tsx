@@ -4,19 +4,20 @@ import { AppRouteProps, routeConfig } from 'shared/config/routeConfig/routeConfi
 import { PageLoader } from 'widgets/PageLoader';
 import { RequireAuth } from './RequireAuth';
 
+const element = (route: AppRouteProps) => (
+    <Suspense fallback={ <PageLoader /> }>
+        { route.element }
+    </Suspense>
+);
+
 export const AppRouter = () => {
     const renderWithWrapper = (route: AppRouteProps) => {
-        const element = (
-            <Suspense fallback={ <PageLoader /> }>
-                { route.element }
-            </Suspense>
-        );
 
         return ( 
             <Route
                 key={ route.path }
                 path = { route.path }
-                element = { route.authOnly ? <RequireAuth>{ element }</RequireAuth> : element }
+                element = { route.authOnly ? <RequireAuth>{ element(route) }</RequireAuth> : element }
             />
         );
     };

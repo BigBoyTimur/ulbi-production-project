@@ -3,12 +3,17 @@ import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/Art
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
+import { Text, TextSize } from 'shared/ui/Text';
+import { useTranslation } from 'react-i18next';
+import { HTMLAttributeAnchorTarget } from 'react';
 
 interface ArticleListProps {
     className?: string;
     articles: Article[]
     isLoading?: boolean;
     view?: ArticleView;
+    noWrap?: boolean;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -23,7 +28,11 @@ export const ArticleList = (props: ArticleListProps) => {
         articles,
         view = ArticleView.SMALL,
         isLoading,
+        noWrap,
+        target,
     } = props;
+
+    const { t } = useTranslation();
 
     const renderArticle = (article: Article) => (
         <ArticleListItem
@@ -31,11 +40,20 @@ export const ArticleList = (props: ArticleListProps) => {
             view={ view }
             className={ cls.card }
             key={ article.id }
+            target={ target }
         />
     );
 
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={ classNames(cls.ArticleList, {}, [ className, cls[view] ]) }>
+                <Text size={ TextSize.L } title={ t('articles_not_found') } />
+            </div>
+        );
+    }
+
     return (
-        <div className={ classNames(cls.ArticleList, {}, [ className, cls[view] ]) }>
+        <div className={ classNames(cls.ArticleList, {  [cls.noWrap]: noWrap }, [ className, cls[view] ]) }>
             { articles.length > 0
                 ? articles.map(renderArticle)
                 : null }

@@ -2,6 +2,9 @@ import path from 'path';
 import webpack from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { buildEnv, BuildPaths } from './config/build/types/config';
+import dotenv from 'dotenv';
+
+dotenv.config(); // .env -> process.env
 
 export default (env: buildEnv) => {
     const paths: BuildPaths = {
@@ -9,6 +12,8 @@ export default (env: buildEnv) => {
         build: path.resolve(__dirname, 'dist'),
         html: path.resolve(__dirname, 'public', 'index.html'),
         src: path.resolve(__dirname, 'src'),
+        locales: path.resolve(__dirname, 'public', 'locales'),
+        buildLocales: path.resolve(__dirname, 'dist', 'locales'),
     };
 
     const mode = env.mode || 'development';

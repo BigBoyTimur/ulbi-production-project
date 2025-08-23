@@ -18,5 +18,17 @@
   "auth_error": "You entered wrong username or password",
   "no_comments": "There are no comments",
   "enter_your_comment": "Enter your comment",
-  "send": "Send"
+  "send": "Send",
+  "sort_by": "Sort by:",
+  "by": "By",
+  "descending": "descending",
+  "ascending": "ascending",
+  "by_created_at_date": "Created at date",
+  "by_title": "Title",
+  "by_views": "Views",
+  "all_articles": "All articles",
+  "it": "IT",
+  "economy": "Economy",
+  "science": "Science",
+  "create_article": "Create article"
 }

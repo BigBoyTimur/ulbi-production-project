@@ -21,7 +21,7 @@ import { ValidateProfileError } from 'entities/Profile';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 const reducers: ReducersList = {
     profile: profileReducer,
