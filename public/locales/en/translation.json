@@ -4,7 +4,8 @@
   "links": {
     "main": "Main",
     "about_us": "About us",
-    "profile": "Profile"
+    "profile": "Profile",
+    "articles": "Articles"
   },
   "page_not_found": "Page not found",
   "unexpected_error_happened": "Unexpected error happened",
@@ -14,5 +15,6 @@
   "enter_username": "Enter username",
   "enter_password": "Enter password",
   "sign_in_form": "Sign in form",
-  "auth_error": "You entered wrong username or password"
+  "auth_error": "You entered wrong username or password",
+  "no_comments": "There are no comments"
 }

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Avatar } from 'shared/ui/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
 
